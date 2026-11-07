@@ -97,6 +97,8 @@ strong { color: #fff; font-weight: 600; }
 .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .stat { padding: 28px 22px; border: 1px solid var(--line); border-radius: 20px; background: var(--card); }
 .stat strong { display: block; font: 700 clamp(36px, 5vw, 56px)/1 var(--display); background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stat.wide { grid-column: span 2; }
+.stat.wide strong { font-size: clamp(28px, 4vw, 40px); }
 .stat span { color: var(--muted); font-size: 14px; }
 
 /* revelar no scroll */
