@@ -1,317 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="js/habilidades.js"></script>
-    <title>Portfólio | Eduardo Eloi</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/img/ms-icon-310x310.png"
-    />
-    <!-- Navegação e início -->
-    <link rel="stylesheet" href="css/navegacao-inicio.css" />
-    <!-- Sobre mim -->
-    <link rel="stylesheet" href="css/sobre-mim.css" />
-    <!-- Projetos -->
-    <link rel="stylesheet" href="css/projetos.css" />
-    <!-- Habilidades -->
-    <link rel="stylesheet" href="css/habilidades.css" />
-    <!-- footer -->
-    <link rel="stylesheet" href="css/footer.css" />
-  </head>
-  <body onload="typeWriter(fName);">
-    <div>
-      <!-- menu -->
-      <input
-        id="close-menu"
-        class="close-menu"
-        type="checkbox"
-        aria-label="close-menu"
-        role="button"
-      />
-      <label
-        class="close-menu-label"
-        for="close-menu"
-        title="close menu"
-      ></label>
-      <div class="barra">
-        <div class="menu-centro">
-          <div class="barra-conteiner centralizador">
-            <div class="logo esquerda">
-              <a href="index.html"
-                ><img src="img/logo.png" alt="logo"
-              /></a>
-            </div>
-            <nav class="direita">
-              <ul onclick="getElementById('close-menu').checked=false;">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre-mim">Sobre mim</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-              </ul>
-            </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eduardo Eloi | Engenheiro de Software Front-End</title>
+  <meta name="description" content="Portfólio de Eduardo Eloi, Engenheiro de Software Pleno focado em Front-End, microsserviços e IA." />
+  <meta name="theme-color" content="#07080d" />
+  <link rel="icon" href="img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <a href="#inicio" class="brand">EE<span>.</span></a>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#jornada">Jornada</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#stack">Stack</a>
+      <a href="#contato" class="pill magnetic">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-text">
+        <p class="eyebrow reveal">Olá, eu sou</p>
+        <h1 class="title" id="title" aria-label="Eduardo Eloi">Eduardo Eloi</h1>
+        <p class="role reveal"><span id="typed"></span><i class="caret"></i></p>
+        <p class="lead reveal">Engenheiro de Software Pleno na Comexport. Crio interfaces rápidas, bonitas e escaláveis, e aplico IA para automatizar o que dá trabalho.</p>
+        <div class="cta reveal">
+          <a href="#projetos" class="btn primary magnetic"><span>Ver projetos</span></a>
+          <a href="https://www.linkedin.com/in/edueloi92" target="_blank" rel="noopener" class="btn ghost magnetic"><span>LinkedIn</span></a>
+        </div>
+      </div>
+      <div class="hero-photo reveal" data-parallax="0.08">
+        <div class="ring"></div>
+        <div class="photo tilt"><img src="img/foto.png" alt="Foto de Eduardo Eloi" /></div>
+        <span class="chip c1" data-parallax="-0.12">Angular</span>
+        <span class="chip c2" data-parallax="0.15">TypeScript</span>
+        <span class="chip c3" data-parallax="-0.08">IA</span>
+        <span class="chip c4" data-parallax="0.1">Microsserviços</span>
+      </div>
+      <a href="#sobre" class="scroll-hint" aria-label="Rolar para baixo"><i></i></a>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Angular</span><span>TypeScript</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>HTML5</span><span>SASS</span><span>Figma</span><span>Git</span><span>Azure DevOps</span><span>Inteligência Artificial</span><span>Clean Code</span>
+        <span>Angular</span><span>TypeScript</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>HTML5</span><span>SASS</span><span>Figma</span><span>Git</span><span>Azure DevOps</span><span>Inteligência Artificial</span><span>Clean Code</span>
+      </div>
+    </div>
+
+    <section class="section about" id="sobre">
+      <div class="wrap grid2">
+        <div>
+          <p class="kicker reveal">Sobre mim</p>
+          <h2 class="h2" data-split>Código limpo, produto de verdade, experiência que encanta.</h2>
+          <p class="reveal">Sou Engenheiro de Software com experiência no desenvolvimento e na manutenção de aplicações web escaláveis. Na Comexport, integro o <strong>Clients Squad</strong>, entregando produtos de alta qualidade para clientes internos e externos.</p>
+          <p class="reveal">Gosto de aprender o tempo todo e de aplicar tecnologia nova onde ela realmente melhora a vida de quem usa. Meu foco é performance, clean code e interfaces modernas e responsivas.</p>
+          <ul class="facts">
+            <li class="reveal"><b>🔭</b> Aplicações baseadas em microsserviços</li>
+            <li class="reveal"><b>🎓</b> MBA em Engenharia de Software, USP/Esalq</li>
+            <li class="reveal"><b>🤖</b> IA e automação com Copilot e LLMs</li>
+            <li class="reveal"><b>📍</b> Tatuí, SP</li>
+          </ul>
+        </div>
+        <div class="stats">
+          <div class="stat reveal tilt"><strong data-count="105">0</strong><span>repositórios no GitHub</span></div>
+          <div class="stat reveal tilt"><strong data-count="21">0</strong><span>projetos favoritados</span></div>
+          <div class="stat reveal tilt"><strong data-count="12">0</strong><span>seguidores</span></div>
+          <div class="stat reveal tilt"><strong data-count="100" data-suffix="%">0</strong><span>foco em experiência do usuário</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="jornada">
+      <div class="wrap">
+        <p class="kicker reveal">Jornada</p>
+        <h2 class="h2" data-split>O que estou construindo agora.</h2>
+        <div class="timeline" id="timeline">
+          <div class="line"><i id="lineFill"></i></div>
+          <article class="tl reveal">
+            <span class="dot"></span>
+            <h3>Engenheiro de Software Pleno · Comexport</h3>
+            <p>Clients Squad. Criação e manutenção de aplicações em microsserviços, com foco em Angular, qualidade e entrega contínua.</p>
+          </article>
+          <article class="tl reveal">
+            <span class="dot"></span>
+            <h3>MBA em Engenharia de Software · USP/Esalq</h3>
+            <p>Aprimorando a visão estratégica, a arquitetura e a gestão de produtos de software.</p>
+          </article>
+          <article class="tl reveal">
+            <span class="dot"></span>
+            <h3>Projetos próprios · Develoi</h3>
+            <p>Sistemas completos, de ponta a ponta, para negócios reais: gestão, agendamento, delivery e atendimento por WhatsApp com IA.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projetos">
+      <div class="pin" id="pin">
+        <div class="sticky">
+          <div class="wrap head">
+            <p class="kicker reveal">Projetos</p>
+            <h2 class="h2" data-split>Sistemas que estão no ar.</h2>
+          </div>
+          <div class="track" id="track">
+            <article class="card tilt">
+              <span class="num">01</span>
+              <h3>Pixel Gráfica</h3>
+              <p>Gestão de gráfica: orçamentos, ordens de serviço, site com carrinho, roupas por tamanho e cor e secretária de IA no WhatsApp.</p>
+              <div class="tags"><em>React</em><em>Node</em><em>Prisma</em><em>IA</em></div>
+              <a href="https://pixel.develoi.com.br" target="_blank" rel="noopener" class="more">Ver no ar →</a>
+            </article>
+            <article class="card tilt">
+              <span class="num">02</span>
+              <h3>Agendelle</h3>
+              <p>Agenda online para salões e profissionais, com lembretes automáticos por WhatsApp.</p>
+              <div class="tags"><em>TypeScript</em><em>Node</em><em>WhatsApp</em></div>
+            </article>
+            <article class="card tilt">
+              <span class="num">03</span>
+              <h3>Cardápio Delivery</h3>
+              <p>Cardápio digital com pedidos online para restaurantes e lanchonetes.</p>
+              <div class="tags"><em>TypeScript</em><em>React</em><em>Node</em></div>
+            </article>
+            <article class="card tilt">
+              <span class="num">04</span>
+              <h3>Secretariia</h3>
+              <p>Sistema de gestão escolar com atendimento por WhatsApp e inteligência artificial.</p>
+              <div class="tags"><em>TypeScript</em><em>IA</em><em>WhatsApp</em></div>
+              <a href="https://github.com/edueloi/secretariia" target="_blank" rel="noopener" class="more">Ver código →</a>
+            </article>
+            <article class="card tilt end">
+              <span class="num">+</span>
+              <h3>Mais de 100 repositórios</h3>
+              <p>Dashboards, ERPs, apps e sites. Tem muito mais no GitHub.</p>
+              <a href="https://github.com/edueloi?tab=repositories" target="_blank" rel="noopener" class="btn primary magnetic"><span>Abrir GitHub</span></a>
+            </article>
           </div>
         </div>
       </div>
-      <!-- menu -->
+    </section>
 
-      <!-- primeira tela -->
-      <section id="inicio">
-        <div class="altura-ajuste">
-          <div class="inicio centralizador">
-            <div class="ajustador organizador">
-              <div class="apresentacao">
-                <p class="descricao">
-                  Oi, eu sou <br />
-                  <span style="display: inline" class="meu-nome"
-                    >Eduardo Eloi.</span
-                  >
-                  <br />
-                  <!-- Desenvolvedor Full Stack -->
-                  Desenvolvedor Front-end
-                </p>
-                <br />
-                <div class="linkedin">
-                  <a
-                    href="https://www.linkedin.com/in/edueloi92/"
-                    target="_blank"
-                    class="link"
-                    >Linkedin</a
-                  >
-                </div>
-              </div>
-              <div class="desenho">
-                <img
-                  class="desenho2"
-                  src="img/eu.png"
-                  alt="Eu-em-desenho"
-                />
-              </div>
-            </div>
-          </div>
+    <section class="section" id="stack">
+      <div class="wrap">
+        <p class="kicker reveal">Stack</p>
+        <h2 class="h2" data-split>Ferramentas do dia a dia.</h2>
+        <div class="skills">
+          <div class="skill reveal tilt"><h3>Front-end</h3><div class="bar"><i style="--w:95%"></i></div><p>Angular · TypeScript · JavaScript · React · HTML5 · SASS · Tailwind</p></div>
+          <div class="skill reveal tilt"><h3>Back-end</h3><div class="bar"><i style="--w:78%"></i></div><p>Node.js · Express · Prisma · MySQL · APIs REST · microsserviços</p></div>
+          <div class="skill reveal tilt"><h3>Produto e design</h3><div class="bar"><i style="--w:85%"></i></div><p>Figma · UX · design systems · responsividade · acessibilidade</p></div>
+          <div class="skill reveal tilt"><h3>DevOps e IA</h3><div class="bar"><i style="--w:80%"></i></div><p>Git · Azure DevOps · Docker · PM2 · Copilot · Gemini · OpenAI</p></div>
         </div>
-      </section>
-      <!-- primeira tela -->
+      </div>
+    </section>
 
-      <!-- sobre mim -->
-      <section id="sobre-mim">
-        <div class="centralizador">
-          <div class="ajustador-2">
-            <div class="avatar">
-              <div>
-                <img
-                  class="desenho-bg"
-                  src="img/avatar.png"
-                  alt="avatar"
-                />
-              </div>
-              <div class="circulo-conteiner">
-                <img
-                  class="circulo css"
-                  src="img/css-circle.png"
-                  alt="css"
-                />
-                <img
-                  class="circulo html"
-                  src="img/html-circle.png"
-                  alt="css"
-                />
-                <img
-                  class="circulo js"
-                  src="img/js-circle.png"
-                  alt="js"
-                />
-              </div>
-            </div>
-            <div class="sobre-mim">
-              <h2>Hello World</h2>
-              <br />
-              <p>
-                Meu nome é Eduardo Eloi e sou apaixonado por tecnologia, formado em Análise e Desenvolvimento de Sistemas, atualmente estou 
-                cursando minha segunda graduação em Desenvolvimento Web, Estou atuando como estagiário de Engenharia de Software no qual trabalho
-                com criação e estilização de componentes front-end que atendam aos requisitos de nossos mocks e histórias de usuários. Também monitoro e processo pull requests para implantações.
-                Atualmente estou focado nas tecnologias voltadas ao FrontEnd
-              </p>
-              <br />
-              <p>
-                Hoje já entendo tecnologias como Angular, Bootstrap, MongoDB, etc.
-              </p>
-            </div>
-          </div>
+    <section class="section contact" id="contato">
+      <div class="wrap center">
+        <p class="kicker reveal">Contato</p>
+        <h2 class="big" data-split>Vamos criar algo incrível juntos?</h2>
+        <div class="cta reveal">
+          <a href="https://www.linkedin.com/in/edueloi92" target="_blank" rel="noopener" class="btn primary magnetic"><span>Falar no LinkedIn</span></a>
+          <a href="https://github.com/edueloi" target="_blank" rel="noopener" class="btn ghost magnetic"><span>GitHub</span></a>
         </div>
-      </section>
-      <!-- sobre mim -->
+      </div>
+    </section>
+  </main>
 
-      <!-- Projetos -->
-      <section id="projetos">
-        <div class="centralizador projetos">
-          <h2 class="project">Projetos</h2>
-          <div class="projetos-itens">
-            <div class="done">
-              <div class="breve"><p>
-                <a href="https://edueloi.github.io/control-expenses/" target="_blank">
-                <img src="img/control-expenses.png"></a></p></div>
-            </div>
-            <div class="done">
-              <div class="breve"><p>
-                <a href="https://edueloi.github.io/To-do-advancede/" target="_blank">
-                  <img src="img/to-do.png">
-                </a>
-              </p></div>
-            </div>
-            <div class="done">
-              <div class="breve">
-                <a href="https://voganstore.com.br/" target="_blank">
-                  <img src="img/vogan.png">
-                </a>
-              </div>
-            </div>
-            <div class="pro escondido">
-              <div class="breve"><p>EM BREVE</p></div>
-            </div>
-            <div class="pro escondido">
-              <div class="breve"><p>EM BREVE</p></div>
-            </div>
-            <div class="pro escondido">
-              <div class="breve"><p>EM BREVE</p></div>
-            </div>
-          </div>
-
-          <div class="github-link">
-            <button>Ver mais</button>
-            <a
-              href="https://github.com/edueloi"
-              target="_blank"
-              >Repositórios no github</a
-            >
-          </div>
-        </div>
-      </section>
-      <!-- Projetos -->
-
-      <!-- Habilidades -->
-      <section id="habilidades">
-        <div class="centralizador">
-          <div class="habilidades-pd">
-            <h2 class="project">Habilidades</h2>
-            <div class="skills-descricao">
-              <div class="conteiner-skills">
-                <div class="skill-box skill1 html-skill">
-                  <img
-                    class="icones-habilidades"
-                    src="img/html.svg"
-                    alt="html-icon"
-                  />
-                </div>
-                <div class="skill-box skill2 css-skill">
-                  <img
-                    class="icones-habilidades"
-                    src="img/css.svg"
-                    alt="css-icon"
-                  />
-                </div>
-                <div class="skill-box skill3 js-skill">
-                  <img
-                    class="icones-habilidades"
-                    src="img/js.svg"
-                    alt="js-icon"
-                  />
-                </div>
-                <!-- <div class="skill-box skill4"> <img class="icones-habilidades" src="img/node.svg" alt="node-icon"> </div>
-                            <div class="skill-box skill5"> <img class="icones-habilidades" src="img/php.svg" alt="php-icon"> </div>
-                            <div class="skill-box skill6"> <img class="icones-habilidades" src="img/java.svg" alt="java-icon"> </div>
-                            
-                            <div class="skill-box skill8"> <img class="icones-habilidades" src="img/sql.svg" alt="sql-icon"> </div> -->
-                <div class="skill-box skill7">
-                  <img
-                    class="icones-habilidades"
-                    src="img/angular.svg"
-                    alt="react-icon"
-                  />
-                </div>
-                <div class="skill-box skill8">
-                  <img
-                    class="icones-habilidades"
-                    src="img/styled 1.svg"
-                    alt="react-icon"
-                  />
-                </div>
-                <div class="skill-box skill13 sass-skill">
-                  <img
-                    class="icones-habilidades"
-                    src="img/sass.svg"
-                    alt="sass-icon"
-                  />
-                </div>
-                <div class="skill-box skill9 git-skill">
-                  <img
-                    class="icones-habilidades"
-                    src="img/git.svg"
-                    alt="git-icon"
-                  />
-                </div>
-                <div class="skill-box skill10 github-skill">
-                  <img
-                    class="icones-habilidades"
-                    src="img/github.svg"
-                    alt="github-icon"
-                  />
-                </div>
-                <!--  <div class="skill-box skill11"> <img class="icones-habilidades" src="img/bootstrap.svg" alt="bootstrap-icon"> </div> -->
-                <!--   <div class="skill-box skill12"> <img class="icones-habilidades" src="img/typescript.svg" alt="typescript-icon"> </div> -->
-              </div>
-              <div class="conteiner-descricao">
-                <p class="texto-descricao">
-                  /* Passe o mouse por cima de alguma habilidade para ler a
-                  descrição */
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Habilidades -->
-
-      <!-- footer -->
-      <footer class="footer">
-        <div class="footer-conteiner">
-          <div class="contato-creditos">
-            E-mail para contato: edueloi.ee@gmail.com <br />
-            Feito por Eduardo Eloi <br />
-            Imagem do south park: sp-studio.de <br />
-          </div>
-          <div class="icons">
-            <div class="links links1">
-              <a href="https://github.com/edueloi" target="_blank">
-                <img
-                  class="transparente"
-                  src="img/githubff.svg"
-                  alt="github-icon"
-                />
-              </a>
-            </div>
-            <div class="links links2">
-              <a
-                href="https://www.linkedin.com/in/edueloi92/"
-                target="_blank"
-              >
-                <img
-                  class="transparente"
-                  src="img/linkedinff.svg"
-                  alt="github-icon"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- footer -->
-    </div>
-    <script src="js/scroll.js"></script>
-    <script src="js/maquina_escrever.js"></script>
-    <script src="js/habilidades.js"></script>
-  </body>
+  <footer class="foot"><p>© <span id="year"></span> Eduardo Eloi · Feito com código e café em Tatuí, SP</p></footer>
+  <script src="js/main.js"></script>
+</body>
 </html>
