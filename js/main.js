@@ -6,6 +6,7 @@
   const lerp = (a, b, t) => a + (b - a) * t;
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 
+  addEventListener('scroll', () => { if (scrollX) scrollTo(0, scrollY); }, { passive: true });
   $('#year').textContent = new Date().getFullYear();
 
   // ---------- pré-carregamento com cortina ----------
